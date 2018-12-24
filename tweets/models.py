@@ -14,8 +14,8 @@ class Tweet(models.Model):
 
 
 class HashTag(models.Model):
-    name = models.CharField(max_length=64, unique=True)
-    tweet = models.ManyToManyField(Tweet)
+    name = models.CharField(max_length=64)
+    tweets = models.ManyToManyField(Tweet)
 
     def __str__(self):
         return self.name
