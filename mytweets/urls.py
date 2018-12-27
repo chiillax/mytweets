@@ -20,7 +20,9 @@ from tweets import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home, name='home'),
-    path('user/<str:userid>/', views.profile, name='username'),
-    url(r'^user/(\w+)/post/$', views.postTweet, name='tweeter'),
+    url(r'^$', views.Home.as_view(), name='home'),
+    path('user/<str:userid>/', views.Profile.as_view(), name='username'),
+    url(r'^user/(\w+)/post/$', views.PostTweet.as_view(), name='tweeter'),
+    url(r'^hashtag/(\w+)/$', views.HashTagCloud.as_view(), name='hashtag'),
+    url(r'^search/$', views.Search.as_view())
 ]

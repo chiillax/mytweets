@@ -1,0 +1,10 @@
+{% for tweet in tweets %}
+<div style="background:wheat; padding: 15px; margin-bottom: 20px; border-radius: 5px">
+    <span>{{ tweet.text }}</span>
+</div>
+{% endfor %}
+{% if not tweets %}
+<div class="well">
+    <span> No Tweet found.</span>
+</div>
+{% endif %}
